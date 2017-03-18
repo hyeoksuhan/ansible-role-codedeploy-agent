@@ -17,7 +17,7 @@
   get_url:
     url: "https://aws-codedeploy-{{ ansible_ec2_placement_region }}.s3.amazonaws.com/latest/install"
     dest: /tmp/codedeploy-install
-    mode: 0700`
+    mode: 0700
 
 - name: Install Code Deploy
   become: true
