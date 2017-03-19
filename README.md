@@ -1,38 +1,41 @@
-Role Name
+Ansible Role: codedeploy-agent
 =========
 
-A brief description of the role goes here.
+This role installs AWS's CodeDeploy agent.
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+None.
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+No variables are required to be set to run this role in AWS.  If you use it to install it to servers outside of AWS, you must set the region:
+
+     ansible_ec2_placement_region: us-east-1
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+You must have CodeDeploy working properly in AWS.
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
     - hosts: servers
+      vars:
+         ansible_ec2_placement_region: us-east-1     #<- if local datacetner
       roles:
-         - { role: username.rolename, x: 42 }
+         - AustinCloudGuru.codedeploy-agent
 
 License
 -------
 
-BSD
+MIT
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Mark Honomichl aka [AustinCloudGuru](https://austincloud.guru)
+Created in 2016
